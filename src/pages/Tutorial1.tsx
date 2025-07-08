@@ -3,10 +3,15 @@ import { useRef } from "react";
 import gsap from "gsap";
 
 /**
+ * Tweens 란?
+ * - Tweens 란 GSAP의 기본적인 애니메이션입니다.
+ * - 예를 들어, gsap.to(), gsap.from(), gsap.fromTo() 등이 있습니다.
+ *
  * to, from, fromTo
  * - gsap.to(): 요소의 현재 상태에서 시작하여 트윈에 정의된 값으로 "이동"합니다.
  * - gsap.from(): 거꾸로 된 .to()와 같습니다. 트윈에 정의된 값에서 시작하여 요소의 현재 상태로 "이동"합니다.
  * - gsap.fromTo(): 시작값과 끝값을 모두 정의합니다.
+ * - gsap.set(): 즉시 설정하는 것과 같습니다.
  *
  * stagger
  * - GSAP의 stagger는 여러 요소에 애니메이션을 적용할 때, 각 요소가 순차적으로 애니메이션되도록 하는 기능입니다.
