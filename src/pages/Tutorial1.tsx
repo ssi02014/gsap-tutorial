@@ -59,6 +59,9 @@ const Tutorial1 = () => {
   const onClickStagger = contextSafe(() => {
     gsap.to(".stagger", {
       duration: 1, // 애니메이션의 총 지속 시간 (초 단위)
+      repeat: 3, // 애니메이션 반복 횟수, -1은 무한 반복
+      repeatDelay: 1, // 반복 사이 1초 대기
+      yoyo: true, // 반복 시 원래 위치로 돌아옴, 동작 원리는 참고: https://gsap.com/docs/v3/GSAP/Tween/yoyo()
       delay: 0.5, // 애니메이션 시작 전 0.5초 대기
       rotation: 360,
       opacity: 1,
