@@ -15,20 +15,19 @@ button {
   padding: 5px 15px;
 }
 
-.timeline1 {
+.timeline {
   width: 100px;
   height: 100px;
+}
+
+.timeline.item1 {
   background-color: red;
 }
 
-.timeline2 {
-  width: 100px;
-  height: 100px;
+.timeline.item2 {
   background-color: blue;
 }
 
-.timeline3 {
-  width: 100px;
-  height: 100px;
+.timeline.item3 {
   background-color: green;
 }

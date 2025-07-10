@@ -66,25 +66,35 @@ const Tutorial1 = () => {
       rotation: 360,
       opacity: 1,
       stagger: 0.2, // 각 요소마다 0.2초씩 지연되어 순차적으로 실행 (이게 중요 *)
-      ease: "sine.out",
+      ease: "sine.out", // 가속도
       force3D: true, // 3D 변환을 강제로 활성화하여 하드웨어 가속 사용
     });
+
+    /**
+     * stagger는 객체도 기능
+     * @see https://gsap.com/resources/getting-started/Staggers/
+     * - each: 0.2를 주면 각 스태거 시작 사이에 0.2초가 있음을 의미
+     * - amount: 2초를 주면 모든 스태거가 2초 이내에 실행됨을 의미
+     * - from: 스태거가 발생 할 시작 위치를 정할 수 있음 "end" 또는 "cented", "edges" 등 가능
+     * - ease: 가속도 함수를 정할 수 있음 to와 같음
+     * - 그 외 grid, axis와 같은 그리드와 관련된 속성이 있음
+     */
   });
 
   const onClickTimeline = contextSafe(() => {
     const timeline = gsap.timeline();
 
-    timeline.to(".timeline1", {
+    timeline.to(".timeline.item1", {
       duration: 0.5,
       x: 15,
       backgroundColor: "blue",
     });
-    timeline.to(".timeline2", {
+    timeline.to(".timeline.item2", {
       duration: 0.5,
       x: 15,
       backgroundColor: "green",
     });
-    timeline.to(".timeline3", {
+    timeline.to(".timeline.item3", {
       duration: 0.5,
       x: 15,
       backgroundColor: "red",
@@ -126,9 +136,9 @@ const Tutorial1 = () => {
 
       <h2>timeline</h2>
       <div style={{ display: "flex", gap: "15px" }}>
-        <div className="timeline1"></div>
-        <div className="timeline2"></div>
-        <div className="timeline3"></div>
+        <div className="timeline item1"></div>
+        <div className="timeline item2"></div>
+        <div className="timeline item3"></div>
       </div>
       <button onClick={onClickTimeline} className="bad">
         timeline
